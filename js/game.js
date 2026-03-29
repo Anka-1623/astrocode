@@ -339,13 +339,13 @@
             astro.className = 'astro-character astro-window';
             astro.id = 'astro-window';
             astro.style.display = 'none';
-            astro.innerHTML = '<img src="photos/astro.jpeg" alt="Astro">';
+            astro.innerHTML = '<img src="photos/astro.png" alt="Astro">';
             cockpit.appendChild(astro);
         }
         if (showAstroInside) {
             var astroIn = document.createElement('div');
             astroIn.className = 'astro-character astro-inside';
-            astroIn.innerHTML = '<img src="photos/astro.jpeg" alt="Astro">';
+            astroIn.innerHTML = '<img src="photos/astro.png" alt="Astro">';
             cockpit.appendChild(astroIn);
         }
         Engine.sceneCtn.appendChild(cockpit);
@@ -487,7 +487,7 @@
         astroD.className = 'astro-character';
         astroD.id = 'door-astro';
         astroD.style.cssText = 'position:relative;z-index:3;transform:scale(0.3);opacity:0.5;transition:transform 1.5s ease-out, opacity 1s ease;';
-        astroD.innerHTML = '<img src="photos/astro.jpeg" alt="Astro">';
+        astroD.innerHTML = '<img src="photos/astro.png" alt="Astro">';
         behind.appendChild(astroD);
         frame.appendChild(behind);
         // Door panels using kapısonhali.png split in half
@@ -841,7 +841,7 @@
 
         var astroHint = document.createElement('div');
         astroHint.className = 'astro-character astro-corner';
-        astroHint.innerHTML = '<img src="photos/astro.jpeg" alt="Astro" style="width:80px;">';
+        astroHint.innerHTML = '<img src="photos/astro.png" alt="Astro" style="width:80px;">';
         Engine.sceneCtn.appendChild(astroHint);
 
         var highlighted = 0;
@@ -1097,7 +1097,7 @@
             astroSubEl = document.createElement('div');
             astroSubEl.className = 'astro-subtitle';
             astroSubEl.innerHTML =
-                '<img src="photos/astro.jpeg" class="astro-subtitle-img">' +
+                '<img src="photos/astro.png" class="astro-subtitle-img">' +
                 '<div class="astro-subtitle-box"><div class="astro-subtitle-name">ASTRO</div><span class="astro-sub-text"></span></div>';
             document.body.appendChild(astroSubEl);
             var tEl = astroSubEl.querySelector('.astro-sub-text');
@@ -1132,7 +1132,7 @@
             var fo = document.createElement('div');
             fo.className = 'fail-overlay';
             fo.innerHTML =
-                '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">' + msg + '</div></div>';
+                '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">' + msg + '</div></div>';
             var btn = document.createElement('button');
             btn.className = 'retry-btn';
             btn.textContent = 'TEKRAR OYNA';
@@ -1301,7 +1301,7 @@
         var astroEl = document.createElement('div');
         astroEl.className = 'astro-subtitle';
         astroEl.innerHTML =
-            '<img src="photos/astro.jpeg" class="astro-subtitle-img">' +
+            '<img src="photos/astro.png" class="astro-subtitle-img">' +
             '<div class="astro-subtitle-box"><div class="astro-subtitle-name">ASTRO</div>' +
             'Burada ismi ve ozellikleri verilen Ay bolge turlerinin karisik verilmis resimleriyle eslestiricez. Kolay gelsin &lt;3</div>';
         document.body.appendChild(astroEl);
@@ -1347,7 +1347,7 @@
                     var popup = document.createElement('div');
                     popup.className = 'fail-overlay';
                     popup.innerHTML =
-                        '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">Tebrik ederim! Cok guzel is cikardin!</div></div>';
+                        '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">Tebrik ederim! Cok guzel is cikardin!</div></div>';
                     var btn = document.createElement('button');
                     btn.className = 'success-btn';
                     btn.textContent = 'DEVAM ET';
@@ -1367,7 +1367,7 @@
                     var popup = document.createElement('div');
                     popup.className = 'fail-overlay';
                     popup.innerHTML =
-                        '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">Maalesef yanlis eslestirdin, bence tekrar dene</div></div>';
+                        '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">Maalesef yanlis eslestirdin, bence tekrar dene</div></div>';
                     var btn = document.createElement('button');
                     btn.className = 'retry-btn';
                     btn.textContent = 'TEKRAR DENE';
@@ -1632,7 +1632,7 @@
         var astroSub = document.createElement('div');
         astroSub.className = 'astro-subtitle';
         astroSub.innerHTML =
-            '<img src="photos/astro.jpeg" class="astro-subtitle-img">' +
+            '<img src="photos/astro.png" class="astro-subtitle-img">' +
             '<div class="astro-subtitle-box"><div class="astro-subtitle-name">ASTRO</div>' +
             '<span class="astro-sub-text"></span></div>';
         document.body.appendChild(astroSub);
@@ -1708,7 +1708,7 @@
                 var popup = document.createElement('div');
                 popup.className = 'fail-overlay';
                 popup.innerHTML =
-                    '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">Aferin! Simdi diger etaba gec.</div></div>';
+                    '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">Aferin! Simdi diger etaba gec.</div></div>';
                 var btn = document.createElement('button');
                 btn.className = 'success-btn';
                 btn.textContent = 'DEVAM ET';
@@ -1722,7 +1722,7 @@
                 var popup2 = document.createElement('div');
                 popup2.className = 'fail-overlay';
                 popup2.innerHTML =
-                    '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">Parcalar uyumsuz lutfen tekrar dene.</div></div>';
+                    '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">Parcalar uyumsuz lutfen tekrar dene.</div></div>';
                 var btn2 = document.createElement('button');
                 btn2.className = 'retry-btn';
                 btn2.textContent = 'TEKRAR DENE';
@@ -1781,7 +1781,7 @@
         var astroSub = document.createElement('div');
         astroSub.className = 'astro-subtitle';
         astroSub.innerHTML =
-            '<img src="photos/astro.jpeg" class="astro-subtitle-img">' +
+            '<img src="photos/astro.png" class="astro-subtitle-img">' +
             '<div class="astro-subtitle-box"><div class="astro-subtitle-name">ASTRO</div>' +
             '<span class="astro-sub-text"></span></div>';
         document.body.appendChild(astroSub);
@@ -1860,7 +1860,7 @@
                 var popup = document.createElement('div');
                 popup.className = 'fail-overlay';
                 popup.innerHTML =
-                    '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">Iste bu! Tebrik ederim. Gercekten cok guzel oldu.</div></div>';
+                    '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">Iste bu! Tebrik ederim. Gercekten cok guzel oldu.</div></div>';
                 var btn = document.createElement('button');
                 btn.className = 'success-btn';
                 btn.textContent = 'DEVAM ET';
@@ -1874,7 +1874,7 @@
                 var popup2 = document.createElement('div');
                 popup2.className = 'fail-overlay';
                 popup2.innerHTML =
-                    '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">Maalesef parcalar uyumlu degil tekrar dene.</div></div>';
+                    '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">Maalesef parcalar uyumlu degil tekrar dene.</div></div>';
                 var btn2 = document.createElement('button');
                 btn2.className = 'retry-btn';
                 btn2.textContent = 'TEKRAR DENE';
@@ -1930,7 +1930,7 @@
                     var popup = document.createElement('div');
                     popup.className = 'fail-overlay';
                     popup.innerHTML =
-                        '<div class="astro-popup"><img src="photos/astro.jpeg"><div class="speech-bubble">Aferin butun asamalari basariyla gectin kendine iyi bak!</div></div>';
+                        '<div class="astro-popup"><img src="photos/astro.png"><div class="speech-bubble">Aferin butun asamalari basariyla gectin kendine iyi bak!</div></div>';
                     var btn = document.createElement('button');
                     btn.className = 'success-btn';
                     btn.textContent = 'DEVAM ET';

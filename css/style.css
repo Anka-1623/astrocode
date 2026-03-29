@@ -845,8 +845,6 @@ html, body {
     height: auto;
     filter: drop-shadow(0 0 15px rgba(100, 180, 255, 0.35));
     animation: astroFloat 4s ease-in-out infinite;
-    mix-blend-mode: multiply;
-    background: transparent;
 }
 
 @keyframes astroFloat {
@@ -1592,8 +1590,6 @@ html, body {
     border: 2px solid var(--accent-cyan);
     box-shadow: 0 0 12px var(--glow-cyan);
     flex-shrink: 0;
-    mix-blend-mode: multiply;
-    background: #222;
 }
 
 .astro-subtitle-box {
@@ -1637,8 +1633,6 @@ html, body {
 .astro-popup img {
     width: 160px; height: auto;
     filter: drop-shadow(0 0 15px rgba(100,180,255,0.35));
-    mix-blend-mode: multiply;
-    background: transparent;
 }
 
 .astro-popup .speech-bubble {
