@@ -20,8 +20,8 @@ Oyuncular görevde farklı uzmanlık alanlarına sahip karakterleri seçerek Ay'
 
 | 🎭 Rol | 🧑‍🚀 Karakter | 🎯 Ana Sorumluluklar | 🧩 Oyun İçi Deneyimleri |
 | :--- | :--- | :--- | :--- |
-| **Uzay Mühendisi** | **Gözde** | Uzay aracının teknik altyapısını yönetmek. | Isı/radyasyon kalkanı optimizasyonu, uzay rotası güvenliği sağlama. |
-| **Gezegen Bilimcisi** | **Emirhan** | Ay'ın jeolojik yapısını incelemek. | Maria, Terrae ve krater analizi, sismik sensör kalibrasyonu, bilimsel numune toplama. |
+| **Uzay Mühendisi** | **?** | Uzay aracının teknik altyapısını yönetmek. | Isı/radyasyon kalkanı optimizasyonu, uzay rotası güvenliği sağlama. |
+| **Gezegen Bilimcisi** | **?** | Ay'ın jeolojik yapısını incelemek. | Maria, Terrae ve krater analizi, sismik sensör kalibrasyonu, bilimsel numune toplama. |
 | **Uzay Yer Kontrol M.** | *(Gizli Karakter)* | Dünya üzerinden kesintisiz iletişimi sağlamak. | Yörüngedeki uydu iletişim noktalarını hizalama ve sistem sorunlarını giderme. |
 
 ### 🦠 Astro'ya Merhaba Deyin!
