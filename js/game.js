@@ -198,21 +198,32 @@
         moon.className = 'menu-moon-deco';
         Engine.sceneCtn.appendChild(moon);
         var roles = gameData.lang === 'tr'
-            ? ['Uzay Mühendisi', 'Astronot', 'Uzay Yer Kontrol Mühendisi']
-            : ['Aerospace Engineer', 'Astronaut', 'Space Ground Control Engineer'];
+            ? ['Astronot', 'Uzay Mühendisi', 'Uzay Yer Kontrol Mühendisi']
+            : ['Astronaut', 'Aerospace Engineer', 'Space Ground Control Engineer'];
         var btns = document.createElement('div');
         btns.className = 'menu-buttons';
         roles.forEach(function (r, i) {
             var btn = document.createElement('button');
             btn.className = 'menu-btn';
-            btn.textContent = r.toUpperCase();
+            
+            var btnContent = r.toUpperCase();
+            if (i === 0) {
+                var badgeText = gameData.lang === 'tr' ? 'ÖNERİLEN' : 'RECOMMENDED';
+                btnContent += `<span style="margin-left: 12px; font-size: 11px; background: #ffffff; padding: 4px 10px; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.8); vertical-align: middle; font-weight: 800; letter-spacing: 1px; color: #0077ff;">${badgeText}</span>`;
+                btn.style.background = 'linear-gradient(135deg, rgba(0, 140, 255, 0.85), rgba(0, 220, 255, 0.8))'; // Neon blue gradient
+                btn.style.border = '2px solid #00ffff';
+                btn.style.boxShadow = '0 0 35px rgba(0, 255, 255, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3)';
+                btn.style.textShadow = '0 2px 4px rgba(0,0,0,0.6)';
+            }
+            
+            btn.innerHTML = btnContent;
             btn.addEventListener('click', function () {
                 gameData.role = r;
                 gameData.roleIdx = i;
                 if (i === 0) {
-                    Engine.fadeOut(1000).then(function () { Engine.setScene(G.um_s1Offer); });
-                } else if (i === 1) {
                     Engine.fadeOut(1000).then(function () { Engine.setScene(G.step1Wake); });
+                } else if (i === 1) {
+                    Engine.fadeOut(1000).then(function () { Engine.setScene(G.um_s1Offer); });
                 } else if (i === 2) {
                     Engine.fadeOut(1000).then(function () { Engine.setScene(G.uykm_s1Email); });
                 } else {
