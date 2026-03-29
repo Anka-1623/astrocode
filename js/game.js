@@ -618,11 +618,11 @@
         field.className = 'minigame-field';
         field.id = 'mg-field';
         var earth = document.createElement('img');
-        earth.src = 'photos/dünya.jpeg';
+        earth.src = 'photos/dünya.png';
         earth.className = 'mg-earth mg-earth-photo';
         field.appendChild(earth);
         var moon = document.createElement('img');
-        moon.src = 'photos/ay.jpeg';
+        moon.src = 'photos/ay.png';
         moon.className = 'mg-moon mg-moon-photo';
         moon.id = 'mg-moon';
         field.appendChild(moon);
@@ -827,15 +827,15 @@
 
         var rock1 = document.createElement('div');
         rock1.className = 'rock rock-1';
-        rock1.innerHTML = '<img src="photos/deliksiz.jpeg" class="rock-img" alt="Kayaç 1"><div class="rock-label">KAYAÇ 1</div>';
+        rock1.innerHTML = '<img src="photos/deliksiz.png" class="rock-img" alt="Kayaç 1"><div class="rock-label">KAYAÇ 1</div>';
         scene.appendChild(rock1);
         var rock2 = document.createElement('div');
         rock2.className = 'rock rock-2';
-        rock2.innerHTML = '<img src="photos/parlak delikli.jpeg" class="rock-img" alt="Kayaç 2"><div class="rock-label">KAYAÇ 2</div>';
+        rock2.innerHTML = '<img src="photos/parlak delikli.png" class="rock-img" alt="Kayaç 2"><div class="rock-label">KAYAÇ 2</div>';
         scene.appendChild(rock2);
         var rock3 = document.createElement('div');
         rock3.className = 'rock rock-3';
-        rock3.innerHTML = '<img src="photos/matdelikli.jpeg" class="rock-img" alt="Kayaç 3"><div class="rock-label">KAYAÇ 3</div>';
+        rock3.innerHTML = '<img src="photos/matdelikli.png" class="rock-img" alt="Kayaç 3"><div class="rock-label">KAYAÇ 3</div>';
         scene.appendChild(rock3);
         Engine.sceneCtn.appendChild(scene);
 
@@ -1051,7 +1051,7 @@
         ov.className = 'orbit-view';
         ov.innerHTML =
             '<div class="orbit-ring" id="orbit-ring"></div>' +
-            '<img src="photos/ay.jpeg" class="orbit-moon orbit-moon-photo" alt="Ay">' +
+            '<img src="photos/ay.png" class="orbit-moon orbit-moon-photo" alt="Ay">' +
             '<div class="satellite" id="sat"><div class="satellite-panel-l"></div><div class="satellite-body"></div><div class="satellite-panel-r"></div></div>' +
             '<div class="orbit-fix-counter" id="fix-counter">0/10</div>' +
             '<div class="orbit-warning-text" id="orbit-warn" style="display:none">! UYDU YORUNGEDEN CIKIYOR !</div>';

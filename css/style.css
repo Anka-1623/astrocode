@@ -2488,7 +2488,6 @@ html, body {
         0 0 50px rgba(74, 138, 245, 0.3),
         0 0 100px rgba(74, 138, 245, 0.1);
     z-index: 2;
-    background: #000;
 }
 
 /* ===== MOON PHOTO (space flight) ===== */
@@ -2504,7 +2503,6 @@ html, body {
     z-index: 2;
     opacity: 0;
     transition: opacity 1.2s ease, right 1.2s ease;
-    background: #000;
 }
 .mg-moon-photo.visible { opacity: 1; right: 20px; }
 
@@ -2517,7 +2515,6 @@ html, body {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 0 30px rgba(200,200,180,0.15);
-    background: #000;
 }
 
 /* ===== SKY MOON PHOTO (rock collection) — hidden, we are ON the moon ===== */
@@ -2528,9 +2525,8 @@ html, body {
 /* ===== ROCK IMAGES ===== */
 .rock-img {
     width: 100%; height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* changed from cover to contain to fit the full rock without cutting since it's transparent now */
     border-radius: inherit;
     pointer-events: none;
-    background: #333;
 }
 
