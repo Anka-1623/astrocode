@@ -903,7 +903,7 @@
         scene.className = 'news-scene';
         scene.innerHTML =
             '<div class=\"news-title\">' + T('SON DAKİKA') + '</div>' +
-            '<div class="news-screen-bg"></div>' +
+            '<div class="news-screen-bg"><video src="photos/haberbülteni.mp4" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; border-radius:6px; opacity:0.8;"></video></div>' +
             '<div class="news-text" id="news-text"></div>' +
             '<div class="news-desk"></div>' +
             "<div class=\"news-banner\"><div class=\"news-banner-text\">T\u00dcRK UZAY AJANSI \u2014 AYAP-3 BA\u015eARIYLA TAMAMLANDI  \u25cf  T\u00dcRK\u0130YE AY'A ULA\u015eTI  \u25cf  AYAP-3 BA\u015eARILI  \u25cf</div></div>";
@@ -1474,27 +1474,30 @@
         Engine.saveGame('uykm_s5', gameData);
         Engine.sceneCtn.innerHTML = '';
 
-        var np = document.createElement('div');
-        np.className = 'newspaper';
-        np.innerHTML =
-            '<div class="newspaper-header">' +
-            '  <div class="newspaper-masthead">Turkiye Uzay Ajansi Bulteni</div>' +
-            '  <div class="newspaper-date">15 Haziran 2038 — Ozel Sayi</div>' +
-            '</div>' +
-            '<div class="newspaper-title">TUA\'nin Gelecegi Genc Muhendise Emanet: Ay Misyonunda Yeni Donem!</div>' +
-            '<div class="newspaper-body">' +
-            'Turkiye Uzay Ajansi, AYAP-1 ve AYAP-2 gorevlerinin yer kontrol operasyonlarini yonetecek yeni muhendisini, aylar suren teknik bakimlari ve kriz sinav yonetimlerini daha sonra secti. Derin uzay haberlesmes ve ucus mekanigi gibi zorlu asamalardan tam olarak rakiplerini geride birakan genc yetenek, yer kontrol masasindaki yerini resmen aldi. TUA, bu kritik atamanin Ay\'a yapilacak sert ve yumusak cikis stratejilerinde kilit rol oynayacagini belirterek, yeni muhendislerin adim adim hizla ilerledigini duyurdu.' +
-            '</div>';
-        Engine.sceneCtn.appendChild(np);
+        var scene = document.createElement('div');
+        scene.className = 'news-scene';
+        scene.innerHTML =
+            '<div class=\"news-title\">' + T('SON DAKİKA') + '</div>' +
+            '<div class="news-screen-bg"><video src="photos/haberbülteni.mp4" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; border-radius:6px; opacity:0.8;"></video></div>' +
+            '<div class="news-text" id="news-text"></div>' +
+            '<div class="news-desk"></div>' +
+            "<div class=\"news-banner\"><div class=\"news-banner-text\">TUA'NIN GELECEĞİ GENÇ MÜHENDİSE EMANET \u2014 AY MİSYONUNDA YENİ DÖNEM  \u25cf  TÜRKİYE AY'A ULAŞTI  \u25cf  AYAP-3 BAŞARILI  \u25cf</div></div>";
+        Engine.sceneCtn.appendChild(scene);
 
-        Engine.fadeIn(1500);
+        var newsContent = 'Turkiye Uzay Ajansi, AYAP-1 ve AYAP-2 gorevlerinin yer kontrol operasyonlarini yonetecek yeni muhendisini, aylar suren teknik bakimlari ve kriz sinav yonetimlerini daha sonra secti. Derin uzay haberlesmes ve ucus mekanigi gibi zorlu asamalardan tam olarak rakiplerini geride birakan genc yetenek, yer kontrol masasindaki yerini resmen aldi. TUA, bu kritik atamanin Ay\'a yapilacak sert ve yumusak cikis stratejilerinde kilit rol oynayacagini belirterek, yeni muhendislerin adim adim hizla ilerledigini duyurdu.';
 
-        // 20 seconds then end
-        setTimeout(function () {
-            Engine.fadeOut(2000).then(function () {
-                showUykmEnd();
+        Engine.fadeIn(1500).then(function () {
+            var bodyEl = document.getElementById('news-text');
+            Engine.typewriter(bodyEl, newsContent, 40, function () {
+                Engine.showPrompt('SPACE TUŞUNA BASIN');
+                Engine.waitKey('Space', function () {
+                    Engine.hidePrompt();
+                    Engine.fadeOut(2000).then(function () {
+                        showUykmEnd();
+                    });
+                });
             });
-        }, 20000);
+        });
 
         function showUykmEnd() {
             Engine.sceneCtn.innerHTML = '';
@@ -1971,29 +1974,30 @@
         Engine.saveGame('um_s5', gameData);
         Engine.sceneCtn.innerHTML = '';
 
-        var np = document.createElement('div');
-        np.className = 'newspaper';
-        np.innerHTML =
-            '<div class="newspaper-header">' +
-            '  <div class="newspaper-masthead">Turkiye Uzay Ajansi Bulteni</div>' +
-            '  <div class="newspaper-date">22 Haziran 2038 \u2014 Ozel Sayi</div>' +
-            '</div>' +
-            '<div class="newspaper-title">Genc Muhendis TUA\'nin Yeni Nesil Roket Prototipini Basariyla Tasarladi!</div>' +
-            '<div class="newspaper-body">' +
-            'Turkiye Uzay Ajansi, AYAP-3 projesi kapsaminda gorevlendirilen genc uzay muhendisinin yeni nesil roket prototipini basariyla tamamladigini duyurdu. ' +
-            'Ozenle secilen malzeme ve boyut uyumuyla olusturulan uzay araci, tum teknik testlerden gecerek ucus onayini aldi. TUA yetkilileri, bu basarinin ' +
-            'Turkiye\'nin uzay programina onemli bir ivme kazandiracagini ve gelecekte yapilacak Ay gorevleri icin kritik bir adim oldugunu belirtti. ' +
-            'Genc muhendisin ozverili calismasi, tum ekip tarafindan takdirle karsilandi.' +
-            '</div>';
-        Engine.sceneCtn.appendChild(np);
+        var scene = document.createElement('div');
+        scene.className = 'news-scene';
+        scene.innerHTML =
+            '<div class=\"news-title\">' + T('SON DAKİKA') + '</div>' +
+            '<div class="news-screen-bg"><video src="photos/haberbülteni.mp4" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; border-radius:6px; opacity:0.8;"></video></div>' +
+            '<div class="news-text" id="news-text"></div>' +
+            '<div class="news-desk"></div>' +
+            "<div class=\"news-banner\"><div class=\"news-banner-text\">GENÇ MÜHENDİS TUA'NIN YENİ NESİL ROKET PROTOTİPİNİ BAŞARIYLA TASARLADI  \u25cf  TÜRKİYE AY'A ULAŞTI  \u25cf  AYAP-3 BAŞARILI  \u25cf</div></div>";
+        Engine.sceneCtn.appendChild(scene);
 
-        Engine.fadeIn(1500);
+        var newsContent = 'Turkiye Uzay Ajansi, AYAP-3 projesi kapsaminda gorevlendirilen genc uzay muhendisinin yeni nesil roket prototipini basariyla tamamladigini duyurdu. Ozenle secilen malzeme ve boyut uyumuyla olusturulan uzay araci, tum teknik testlerden gecerek ucus onayini aldi. TUA yetkilileri, bu basarinin Turkiye\'nin uzay programina onemli bir ivme kazandiracagini ve gelecekte yapilacak Ay gorevleri icin kritik bir adim oldugunu belirtti. Genc muhendisin ozverili calismasi, tum ekip tarafindan takdirle karsilandi.';
 
-        setTimeout(function () {
-            Engine.fadeOut(2000).then(function () {
-                showUmEnd();
+        Engine.fadeIn(1500).then(function () {
+            var bodyEl = document.getElementById('news-text');
+            Engine.typewriter(bodyEl, newsContent, 40, function () {
+                Engine.showPrompt('SPACE TUŞUNA BASIN');
+                Engine.waitKey('Space', function () {
+                    Engine.hidePrompt();
+                    Engine.fadeOut(2000).then(function () {
+                        showUmEnd();
+                    });
+                });
             });
-        }, 20000);
+        });
 
         function showUmEnd() {
             Engine.sceneCtn.innerHTML = '';
