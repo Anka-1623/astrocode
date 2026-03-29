@@ -313,7 +313,7 @@
         Engine.showSpaceBg();
         Engine.sceneCtn.innerHTML = '';
 
-        // Video background behind cockpit windows
+        // Layer 1: Looping video (bottom — visible through white areas)
         var video = document.createElement('video');
         video.className = 'cockpit-video-bg';
         video.src = 'photos/gözdeuzayvideo1.mp4';
@@ -324,38 +324,16 @@
         video.setAttribute('playsinline', '');
         Engine.sceneCtn.appendChild(video);
 
+        // Layer 2: Cockpit photo — mix-blend-mode:multiply makes white→transparent
         var cockpit = document.createElement('div');
         cockpit.className = 'cockpit';
 
-        // Cockpit photo overlay
         var cockpitImg = document.createElement('img');
         cockpitImg.src = 'photos/uzaykokpiti.jpeg';
-        cockpitImg.className = 'cockpit-photo-overlay';
+        cockpitImg.className = 'cockpit-photo-frame';
         cockpit.appendChild(cockpitImg);
 
-        cockpit.innerHTML +=
-            '<div class="cockpit-frame">' +
-            '  <div class="cockpit-panel-top"></div>' +
-            '  <div class="cockpit-panel-bottom"></div>' +
-            '  <div class="cockpit-panel-left"></div>' +
-            '  <div class="cockpit-panel-right"></div>' +
-            '  <div class="cockpit-strut-1"></div>' +
-            '  <div class="cockpit-strut-2"></div>' +
-            '  <div class="cockpit-reflection cockpit-reflection-1"></div>' +
-            '  <div class="cockpit-reflection cockpit-reflection-2"></div>' +
-            '  <div class="cockpit-reflection cockpit-reflection-3"></div>' +
-            '  <div class="cockpit-dashboard">' +
-            '    <div class="dash-gauge"></div>' +
-            '    <div class="dash-light"></div><div class="dash-light"></div>' +
-            '    <div class="dash-light"></div><div class="dash-light"></div>' +
-            '    <div class="dash-light"></div><div class="dash-light"></div>' +
-            '    <div class="dash-gauge"></div>' +
-            '  </div>' +
-            '</div>' +
-            '<div class="cockpit-seat">' +
-            '  <div class="seat-back"></div>' +
-            '  <div class="seat-cushion"></div>' +
-            '</div>';
+        // Astro characters on top
         if (showAstroOnWindow) {
             var astro = document.createElement('div');
             astro.className = 'astro-character astro-window';

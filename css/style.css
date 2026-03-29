@@ -2434,16 +2434,16 @@ html, body {
     pointer-events: none;
 }
 
-/* ===== COCKPIT PHOTO OVERLAY ===== */
-.cockpit-photo-overlay {
+/* ===== COCKPIT PHOTO FRAME (main cockpit visual) ===== */
+/* mix-blend-mode:multiply → white areas become transparent, showing video through windows */
+.cockpit-photo-frame {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
-    opacity: 0.35;
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
 }
 
 /* ===== PHONE PHOTO (bedroom scenes) ===== */
