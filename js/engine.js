@@ -44,7 +44,9 @@
             langBtn.addEventListener('click', function() {
                 window.Lang.current = window.Lang.current === 'tr' ? 'en' : 'tr';
                 langBtn.textContent = window.Lang.current.toUpperCase();
-                // We won't auto-reload the whole scene immediately but update HUDs if needed
+                
+                // Instant update function
+                if (window.Lang.updateDom) window.Lang.updateDom();
             });
             langBtn.textContent = window.Lang.current.toUpperCase();
         }
@@ -179,6 +181,7 @@
         E.dialogueCtn.innerHTML = '';
         var tEl = document.createElement('span');
         tEl.className = 'dialogue-text';
+        tEl.setAttribute('data-tr-text', text); // Save original TR string
         E.dialogueCtn.appendChild(tEl);
         E.typewriter(tEl, T(text), 30, callback);
     };
@@ -188,6 +191,7 @@
         E.dialogueCtn.innerHTML = '';
         var tEl = document.createElement('span');
         tEl.className = 'dialogue-text';
+        tEl.setAttribute('data-tr-text', text);
         tEl.textContent = T(text);
         E.dialogueCtn.appendChild(tEl);
     };
@@ -200,6 +204,7 @@
 
     E.showPrompt = function (text) {
         E.promptCtn.classList.remove('hidden');
+        E.promptCtn.setAttribute('data-tr-text', text);
         E.promptCtn.textContent = T(text);
     };
 
@@ -214,6 +219,7 @@
         choices.forEach(function (c) {
             var btn = document.createElement('button');
             btn.className = 'choice-btn';
+            btn.setAttribute('data-tr-text', c.text);
             btn.textContent = T(c.text);
             btn.addEventListener('click', function () {
                 E.hideChoices();

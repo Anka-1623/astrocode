@@ -121,6 +121,55 @@ window.Lang = {
         "UZAY ARACININ KONTROLÜ İÇİN X TUŞUNA BASIN": "PRESS X TO CONTROL SPACECRAFT",
         "W/S TUŞLARI İLE HAREKET EDİN": "MOVE WITH W/S KEYS",
         "Yanlış kayaç! Tekrar deneyin...": "Wrong rock! Try again..."
+    },
+    
+    updateDom: function() {
+        var isEn = window.Lang.current === 'en';
+        
+        // Reverse dict for querying EN -> TR
+        if (!window.Lang.revDict) {
+            window.Lang.revDict = {};
+            for (var trKey in window.Lang.dict) {
+                var enVal = window.Lang.dict[trKey];
+                window.Lang.revDict[enVal] = trKey;
+            }
+        }
+        
+        // Strategy 1: Elements tagged with data-tr-text (Prompts, Choices, Dialogue)
+        var tagged = document.querySelectorAll('[data-tr-text]');
+        for (var i = 0; i < tagged.length; i++) {
+            var el = tagged[i];
+            var trText = el.getAttribute('data-tr-text');
+            el.textContent = window.T(trText);
+        }
+        
+        // Strategy 2: Walk the DOM and replace raw texts (for innerHTML injects)
+        function walkAndTranslate(node) {
+            if (node.nodeType === 3) { // Text node
+                var txt = node.nodeValue;
+                // Exclude empty or purely whitespace nodes
+                if (!txt || !txt.trim()) return;
+                
+                if (isEn && window.Lang.dict[txt]) {
+                    node.nodeValue = window.Lang.dict[txt];
+                } else if (!isEn && window.Lang.revDict[txt]) {
+                    node.nodeValue = window.Lang.revDict[txt];
+                }
+            } else if (node.nodeType === 1) { // Element node
+                // Don't traverse script or style nodes, or marked nodes
+                if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE' || node.hasAttribute('data-tr-text')) {
+                    return;
+                }
+                for (var j = 0; j < node.childNodes.length; j++) {
+                    walkAndTranslate(node.childNodes[j]);
+                }
+            }
+        }
+        
+        var container = document.getElementById('game-container');
+        if (container) {
+            walkAndTranslate(container);
+        }
     }
 };
 
