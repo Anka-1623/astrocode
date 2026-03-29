@@ -630,7 +630,7 @@
         // HUD
         var hud = document.createElement('div');
         hud.className = 'mg-hud';
-        hud.innerHTML = '<div class="mg-hud-label">MESAFE</div><div class="mg-hud-distance" id="mg-dist">0%</div>';
+        hud.innerHTML = '<div class=\"mg-hud-label\">' + T('MESAFE') + '</div><div class=\"mg-hud-distance\" id=\"mg-dist\">0%</div>';
         field.appendChild(hud);
 
         var ship = document.createElement('div');
@@ -891,14 +891,14 @@
         var scene = document.createElement('div');
         scene.className = 'news-scene';
         scene.innerHTML =
-            '<div class="news-title">SON DAKİKA</div>' +
+            '<div class=\"news-title\">' + T('SON DAKİKA') + '</div>' +
             '<div class="news-screen-bg"></div>' +
             '<div class="news-text" id="news-text"></div>' +
             '<div class="news-desk"></div>' +
             "<div class=\"news-banner\"><div class=\"news-banner-text\">T\u00dcRK UZAY AJANSI \u2014 AYAP-3 BA\u015eARIYLA TAMAMLANDI  \u25cf  T\u00dcRK\u0130YE AY'A ULA\u015eTI  \u25cf  AYAP-3 BA\u015eARILI  \u25cf</div></div>";
         Engine.sceneCtn.appendChild(scene);
         var newsTextEl = document.getElementById('news-text');
-        var newsContent = "2038 yılı itibariyle Türkiye'nin AYAP-1, AYAP-2 ve şuanlık sonuncusu olan AYAP-3'ün başarıyla bittiğini söylemekten gurur duyarız, umuyoruz ki Türk milletini böyle başarılı görmeye devam ederiz…";
+        var newsContent = T(\"2038 yılı itibariyle Türkiye'nin AYAP-1, AYAP-2 ve şuanlık sonuncusu olan AYAP-3'ün başarıyla bittiğini söylemekten gurur duyarız, umuyoruz ki Türk milletini böyle başarılı görmeye devam ederiz…\");
         Engine.fadeIn(1500).then(function () {
             Engine.typewriter(newsTextEl, newsContent, 40, function () {
                 Engine.showPrompt('SPACE TUŞUNA BASIN');
@@ -924,10 +924,10 @@
             Engine.overlay.style.transition = 'opacity 0.5s ease';
             Engine.overlay.style.opacity = '0';
             Engine.overlay.style.pointerEvents = 'none';
-            Engine.typewriter(endTxt, 'SON…', 200, function () {
+            Engine.typewriter(endTxt, T('SON…'), 200, function () {
                 Engine.deleteSave();
                 setTimeout(function () {
-                    Engine.showPrompt('OYUN BİTTİ — TEKRAR OYNAMAK İÇİN SPACE TUŞUNA BASIN');
+                    Engine.showPrompt(T('OYUN BİTTİ — TEKRAR OYNAMAK İÇİN SPACE TUŞUNA BASIN'));
                     Engine.waitKey('Space', function () { location.reload(); });
                 }, 2000);
             });
@@ -1060,7 +1060,7 @@
         // HUD
         var hud = document.createElement('div');
         hud.className = 'orbit-hud';
-        hud.innerHTML = '<div class="orbit-timer-label">KALAN SURE</div><div class="orbit-timer" id="orbit-timer">99</div>';
+        hud.innerHTML = '<div class=\"orbit-timer-label\">' + T('KALAN SURE') + '</div><div class=\"orbit-timer\" id=\"orbit-timer\">99</div>';
         room.appendChild(hud);
 
         Engine.sceneCtn.appendChild(room);
@@ -1407,7 +1407,7 @@
         var sb = document.createElement('div');
         sb.className = 'scoreboard';
         sb.style.cssText = 'position:relative;top:auto;right:auto;';
-        sb.innerHTML = '<div class="scoreboard-label">TOPLAM PUAN</div><div class="scoreboard-value">' + total + '</div>';
+        sb.innerHTML = '<div class=\"scoreboard-label\">' + T('TOPLAM PUAN') + '</div><div class=\"scoreboard-value\">' + total + '</div>';
         screen.appendChild(sb);
 
         // Breakdown
@@ -1527,7 +1527,7 @@
         if (existing) existing.remove();
         var bar = document.createElement('div');
         bar.className = 'subtitle-bar';
-        bar.innerHTML = '<div class="sub-speaker">' + speaker + '</div>';
+        bar.innerHTML = '<div class=\"sub-speaker\">' + T(speaker) + '</div>';
         var tEl = document.createElement('span');
         tEl.className = 'sub-text';
         bar.appendChild(tEl);

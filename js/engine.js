@@ -35,8 +35,19 @@
         var si = document.createElement('div');
         si.className = 'save-indicator';
         si.id = 'save-indicator';
-        si.textContent = '● KAYDEDILDI';
+        si.textContent = T('● KAYDEDILDI');
         document.body.appendChild(si);
+
+        // Language Toggle Logic
+        var langBtn = document.getElementById('lang-btn');
+        if (langBtn) {
+            langBtn.addEventListener('click', function() {
+                window.Lang.current = window.Lang.current === 'tr' ? 'en' : 'tr';
+                langBtn.textContent = window.Lang.current.toUpperCase();
+                // We won't auto-reload the whole scene immediately but update HUDs if needed
+            });
+            langBtn.textContent = window.Lang.current.toUpperCase();
+        }
     };
 
     E.buildStars = function () {
@@ -169,7 +180,7 @@
         var tEl = document.createElement('span');
         tEl.className = 'dialogue-text';
         E.dialogueCtn.appendChild(tEl);
-        E.typewriter(tEl, text, 30, callback);
+        E.typewriter(tEl, T(text), 30, callback);
     };
 
     E.showDialogueInstant = function (text) {
@@ -177,7 +188,7 @@
         E.dialogueCtn.innerHTML = '';
         var tEl = document.createElement('span');
         tEl.className = 'dialogue-text';
-        tEl.textContent = text;
+        tEl.textContent = T(text);
         E.dialogueCtn.appendChild(tEl);
     };
 
@@ -189,7 +200,7 @@
 
     E.showPrompt = function (text) {
         E.promptCtn.classList.remove('hidden');
-        E.promptCtn.textContent = text;
+        E.promptCtn.textContent = T(text);
     };
 
     E.hidePrompt = function () {
@@ -203,7 +214,7 @@
         choices.forEach(function (c) {
             var btn = document.createElement('button');
             btn.className = 'choice-btn';
-            btn.textContent = c.text;
+            btn.textContent = T(c.text);
             btn.addEventListener('click', function () {
                 E.hideChoices();
                 if (c.action) c.action();
@@ -219,7 +230,7 @@
 
     E.showCongrats = function () {
         E.congratsCtn.classList.remove('hidden');
-        E.congratsCtn.textContent = 'TEBRİKLER!';
+        E.congratsCtn.textContent = T('TEBRİKLER!');
     };
 
     E.hideCongrats = function () {
