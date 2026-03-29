@@ -7,27 +7,27 @@
     var gameData = { questionChoice: null };
 
     var SCENE_MAP = {
-        'intro1':        function () { G.intro1(); },
-        'intro2':        function () { G.intro2(); },
-        'menu':          function () { G.menuLanguage(); },
-        'step1_wake':    function () { G.step1Wake(); },
+        'intro1': function () { G.intro1(); },
+        'intro2': function () { G.intro2(); },
+        'menu': function () { G.menuLanguage(); },
+        'step1_wake': function () { G.step1Wake(); },
         'step1_shuttle': function () { G.step1Shuttle(); },
-        'step2_door':    function () { G.step2Door(); },
-        'step2_talk':    function () { G.step2Talk(); },
-        'step3_mini':    function () { G.step3Minigame(); },
-        'step3_after':   function () { G.step3After(); },
-        'step4_mini':    function () { G.step4Minigame(); },
-        'finale':        function () { G.finale(); },
-        'uykm_s1':       function () { G.uykm_s1Email(); },
-        'uykm_s2':       function () { G.uykm_s2Orbit(); },
-        'uykm_s3':       function () { G.uykm_s3Match(); },
-        'uykm_s4':       function () { G.uykm_s4Score(); },
-        'uykm_s5':       function () { G.uykm_s5News(); },
-        'um_s1':         function () { G.um_s1Offer(); },
-        'um_s2':         function () { G.um_s2Assembly(); },
-        'um_s3':         function () { G.um_s3Material(); },
-        'um_s4':         function () { G.um_s4Final(); },
-        'um_s5':         function () { G.um_s5News(); }
+        'step2_door': function () { G.step2Door(); },
+        'step2_talk': function () { G.step2Talk(); },
+        'step3_mini': function () { G.step3Minigame(); },
+        'step3_after': function () { G.step3After(); },
+        'step4_mini': function () { G.step4Minigame(); },
+        'finale': function () { G.finale(); },
+        'uykm_s1': function () { G.uykm_s1Email(); },
+        'uykm_s2': function () { G.uykm_s2Orbit(); },
+        'uykm_s3': function () { G.uykm_s3Match(); },
+        'uykm_s4': function () { G.uykm_s4Score(); },
+        'uykm_s5': function () { G.uykm_s5News(); },
+        'um_s1': function () { G.um_s1Offer(); },
+        'um_s2': function () { G.um_s2Assembly(); },
+        'um_s3': function () { G.um_s3Material(); },
+        'um_s4': function () { G.um_s4Final(); },
+        'um_s5': function () { G.um_s5News(); }
     };
 
     G.boot = function () {
@@ -898,7 +898,7 @@
             "<div class=\"news-banner\"><div class=\"news-banner-text\">T\u00dcRK UZAY AJANSI \u2014 AYAP-3 BA\u015eARIYLA TAMAMLANDI  \u25cf  T\u00dcRK\u0130YE AY'A ULA\u015eTI  \u25cf  AYAP-3 BA\u015eARILI  \u25cf</div></div>";
         Engine.sceneCtn.appendChild(scene);
         var newsTextEl = document.getElementById('news-text');
-        var newsContent = T(\"2038 yılı itibariyle Türkiye'nin AYAP-1, AYAP-2 ve şuanlık sonuncusu olan AYAP-3'ün başarıyla bittiğini söylemekten gurur duyarız, umuyoruz ki Türk milletini böyle başarılı görmeye devam ederiz…\");
+        var newsContent = "2038 yılı itibariyle Türkiye'nin AYAP-1, AYAP-2 ve şuanlık sonuncusu olan AYAP-3'ün başarıyla bittiğini söylemekten gurur duyarız, umuyoruz ki Türk milletini böyle başarılı görmeye devam ederiz…";
         Engine.fadeIn(1500).then(function () {
             Engine.typewriter(newsTextEl, newsContent, 40, function () {
                 Engine.showPrompt('SPACE TUŞUNA BASIN');
@@ -939,14 +939,22 @@
     // ==========================================================
 
     var REGIONS = [
-        { id: 'maria', name: 'Ay Denizleri (Maria)', css: 'region-img-maria',
-          desc: "Ay'in yuzeyindeki genis, koyu renkli duzluklerdir. Dev goktaslarinin carpmasi sonucu olusan derin cukurlara bazaltik lavlarin dolmasiyla olusmislardir. Icerdikleri demir ve magnezyum nedeniyle koyu renktedir."},
-        { id: 'highlands', name: 'Ay Daglik Bolgeleri (Highlands)', css: 'region-img-highlands',
-          desc: "Ay'in acik renkli, engebeli ve cok eski olan kisimlardir. Aluminyum bakimindan zengin Anortozit taslari nedeniyle acik renklidir. Milyarlarca yil boyunca goktasi bombardimanina tutuldugu icin asiri derecede kraterli ve daglikdir."},
-        { id: 'craters', name: 'Carpma Kraterleri', css: 'region-img-craters',
-          desc: "Ay'in neredeyse her yerinde bulunurlar. Atmosfer olmadigi icin goktaslari yanmadan dogrudan yuzeye carpar. Genellikle daireseldir ve bazi genc kraterlerden beyaz isik cizgileri uzanir."},
-        { id: 'poles', name: 'Ay Kutuplari ve Kalici Golge Bolgeleri', css: 'region-img-poles',
-          desc: "Gunes isiginin neredeyse hic ulasmadigi, kraterlerin icindeki cok derin bolgelerdir. Sicaklik hicbir zaman yukselmez (yaklasik -230C). Bu soguk tuzaklar icinde su buzu yataklarinin oldugu tespit edilmistir."}
+        {
+            id: 'maria', name: 'Ay Denizleri (Maria)', css: 'region-img-maria',
+            desc: "Ay'in yuzeyindeki genis, koyu renkli duzluklerdir. Dev goktaslarinin carpmasi sonucu olusan derin cukurlara bazaltik lavlarin dolmasiyla olusmislardir. Icerdikleri demir ve magnezyum nedeniyle koyu renktedir."
+        },
+        {
+            id: 'highlands', name: 'Ay Daglik Bolgeleri (Highlands)', css: 'region-img-highlands',
+            desc: "Ay'in acik renkli, engebeli ve cok eski olan kisimlardir. Aluminyum bakimindan zengin Anortozit taslari nedeniyle acik renklidir. Milyarlarca yil boyunca goktasi bombardimanina tutuldugu icin asiri derecede kraterli ve daglikdir."
+        },
+        {
+            id: 'craters', name: 'Carpma Kraterleri', css: 'region-img-craters',
+            desc: "Ay'in neredeyse her yerinde bulunurlar. Atmosfer olmadigi icin goktaslari yanmadan dogrudan yuzeye carpar. Genellikle daireseldir ve bazi genc kraterlerden beyaz isik cizgileri uzanir."
+        },
+        {
+            id: 'poles', name: 'Ay Kutuplari ve Kalici Golge Bolgeleri', css: 'region-img-poles',
+            desc: "Gunes isiginin neredeyse hic ulasmadigi, kraterlerin icindeki cok derin bolgelerdir. Sicaklik hicbir zaman yukselmez (yaklasik -230C). Bu soguk tuzaklar icinde su buzu yataklarinin oldugu tespit edilmistir."
+        }
     ];
 
     // ===== SPACE TRANSITION HELPER =====
@@ -1507,18 +1515,18 @@
     // ==========================================================
 
     var ROCKET_PARTS = [
-        { id: 'nose',  name: 'BURUN KONISI', css: 'rm-nose' },
-        { id: 'upper', name: 'UST GOVDE',    css: 'rm-upper' },
-        { id: 'main',  name: 'ANA GOVDE',    css: 'rm-main' },
-        { id: 'lower', name: 'ALT GOVDE',    css: 'rm-lower' },
-        { id: 'fins',  name: 'KANATCIKLAR',  css: 'rm-fins' }
+        { id: 'nose', name: 'BURUN KONISI', css: 'rm-nose' },
+        { id: 'upper', name: 'UST GOVDE', css: 'rm-upper' },
+        { id: 'main', name: 'ANA GOVDE', css: 'rm-main' },
+        { id: 'lower', name: 'ALT GOVDE', css: 'rm-lower' },
+        { id: 'fins', name: 'KANATCIKLAR', css: 'rm-fins' }
     ];
 
     var MATERIALS = [
-        { id: 'carbon',   name: 'Karbon Fiber',    pos: 'mat-tl', css: 'mat-carbon' },
+        { id: 'carbon', name: 'Karbon Fiber', pos: 'mat-tl', css: 'mat-carbon' },
         { id: 'aluminum', name: 'Aluminyum Alasim', pos: 'mat-tr', css: 'mat-aluminum' },
-        { id: 'steel',    name: 'Paslanmaz Celik',  pos: 'mat-bl', css: 'mat-steel' },
-        { id: 'titanium', name: 'Titanyum Alasim',   pos: 'mat-br', css: 'mat-titanium' }
+        { id: 'steel', name: 'Paslanmaz Celik', pos: 'mat-bl', css: 'mat-steel' },
+        { id: 'titanium', name: 'Titanyum Alasim', pos: 'mat-br', css: 'mat-titanium' }
     ];
 
     // Subtitle helper

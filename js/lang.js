@@ -91,8 +91,36 @@ window.Lang = {
         'TÜRKİYE AY’A ULAŞTI!': 'TURKEY REACHES THE MOON!',
         'AYAP-3 görevi kapsamında Uzay Mühendisi Gözde ve Gezegen Bilimcisi Emirhan, Ay yüzeyine iniş yaptı.<br><br>Gözde, uzay aracının sistemlerini başarıyla yönetirken, Emirhan Ay yüzeyinden eşsiz jeolojik örnekler topladı.<br><br>Bu başarı, Türkiye’nin uzay araştırmaları vizyonunda dev bir adım olarak tarihe geçti.': 'As part of the AYAP-3 mission, Aerospace Engineer Gözde and Planetary Scientist Emirhan landed on the lunar surface.<br><br>While Gözde successfully managed the spacecraft systems, Emirhan collected unique geological samples from the lunar surface.<br><br>This success has gone down in history as a giant step in Turkey\'s space exploration vision.',
         'Oyuncu': 'Player',
-        'Gözde': 'Gözde',
-        'Emirhan': 'Emirhan'
+        'Emirhan': 'Emirhan',
+
+        // Missing dialogues and UI prompts
+        "?: Benim adım Astro! Ben bir Tardigrad'ım yani su ayısı. Buralarda bilgi alabileceğin tek kişi benim!": "?: My name is Astro! I am a Tardigrade, a water bear. I'm the only one around here you can get information from!",
+        "Astro: Hadi diğer sorularını cevaplamadan önce Ay'a gidip kendi başına bazı şeyleri görmeni sağlayalım!": "Astro: Come on, before answering your other questions, let's go to the Moon and let you see some things for yourself!",
+        "Astro: Hadi, son bir görevin kaldı. Ay üzerinde hali hazırda bulunan AYAP-2'yi uzaktan kontrol edip Ay'dan 1 tane örnek topla. Ben sana toplaman gereken örneklerin ipucunu vereceğim!": "Astro: Come on, you have one last mission left. Remotely control AYAP-2 already on the Moon and collect 1 sample. I will give you the hint for the sample you need to collect!",
+        "Astro: Hmmm….Ay'ın yüzeyindeki bazı kayaçlar manyetize olmuş durumdadır.": "Astro: Hmmm….Some rocks on the Moon's surface are magnetized.",
+        "Astro: Hmm….Ayda depremler olduğunu biliyor muydun? Hem de Dünya'ya kıyasla saatler boyu süren depremlerden bahsediyorum.": "Astro: Hmm….Did you know there are moonquakes? And I'm talking about quakes that last for hours compared to Earth.",
+        "Astro: Parlak ve delikli olan kayacı topla! A/D ile seç, X ile topla.": "Astro: Collect the shiny and porous rock! Select with A/D, collect with X.",
+        "Astro: Peki sana Ay tozunun akciğerlerin için çok tehlikeli olduğunu söylesem ne derdin?": "Astro: Well, what would you say if I told you that Moon dust is very dangerous for your lungs?",
+        "Ay'in acik renkli, engebeli ve cok eski olan kisimlardir. Aluminyum bakimindan zengin Anortozit taslari nedeniyle acik renklidir. Milyarlarca yil boyunca goktasi bombardimanina tutuldugu icin asiri derecede kraterli ve daglikdir.": "They are the light-colored, rugged, and very old parts of the Moon. They are light-colored due to Anorthosite rocks rich in aluminum. Because it has been bombarded by meteorites for billions of years, it is extremely cratered and mountainous.",
+        "Ay'in neredeyse her yerinde bulunurlar. Atmosfer olmadigi icin goktaslari yanmadan dogrudan yuzeye carpar. Genellikle daireseldir ve bazi genc kraterlerden beyaz isik cizgileri uzanir.": "They are found almost everywhere on the Moon. Since there is no atmosphere, meteorites hit the surface directly without burning. They are usually circular, and white rays of light extend from some young craters.",
+        "Ay'in yuzeyindeki genis, koyu renkli duzluklerdir. Dev goktaslarinin carpmasi sonucu olusan derin cukurlara bazaltik lavlarin dolmasiyla olusmislardir. Icerdikleri demir ve magnezyum nedeniyle koyu renktedir.": "They are the vast, dark-colored plains on the surface of the Moon. They were formed by basaltic lavas filling deep depressions caused by giant meteorite impacts. They are dark in color due to the iron and magnesium they contain.",
+        "Bir meteora çarptınız! Tekrar deneniyor...": "You hit a meteor! Retrying...",
+        "DEVAM ETMEK ICIN SPACE TUSUNA BASIN": "PRESS SPACE TO CONTINUE",
+        "DEVAM ETMEK İÇİN SPACE TUŞUNA BASIN": "PRESS SPACE TO CONTINUE",
+        "Gunes isiginin neredeyse hic ulasmadigi, kraterlerin icindeki cok derin bolgelerdir. Sicaklik hicbir zaman yukselmez (yaklasik -230C). Bu soguk tuzaklar icinde su buzu yataklarinin oldugu tespit edilmistir.": "These are the very deep regions inside the craters where sunlight almost never reaches. Temperatures never rise (about -230C). Water ice deposits have been detected inside these cold traps.",
+        "OYUN BITTI -- TEKRAR OYNAMAK ICIN SPACE TUSUNA BASIN": "GAME OVER -- PRESS SPACE TO PLAY AGAIN",
+        "Oyuncu: Eee söyle bakalım seni kim gönderdi?": "Player: So tell me, who sent you?",
+        "Oyuncu: Gerçekten ilginçmiş fakat yeterli değil.": "Player: That's really interesting, but not enough.",
+        "Oyuncu: Madem o kadar bilgilisin bana Ay ile ilgili üç bilinmedik bilgi ver.": "Player: Since you are so knowledgeable, give me three unknown facts about the Moon.",
+        "Oyuncu: Sana nasıl güvenebilirim ki! Daha ne olduğunu bile bilmiyorum.": "Player: How can I trust you! I don't even know what you are.",
+        "Oyuncu: Tamam, kapıya yaklaş seni içeri alacağım.": "Player: Okay, approach the door and I will let you in.",
+        "Oyuncu: İyi bakalım o zaman bana şunu anlat…": "Player: Alright then, explain this to me…",
+        "TELEFONU AÇMAK İÇİN SPACE TUŞUNA BASIN": "PRESS SPACE TO ANSWER PHONE",
+        "TELEFONU KONTROL ETMEK ICIN SPACE TUSUNA BASIN": "PRESS SPACE TO CHECK PHONE",
+        "TESISE GECMEK ICIN SPACE TUSUNA BASIN": "PRESS SPACE TO ENTER FACILITY",
+        "UZAY ARACININ KONTROLÜ İÇİN X TUŞUNA BASIN": "PRESS X TO CONTROL SPACECRAFT",
+        "W/S TUŞLARI İLE HAREKET EDİN": "MOVE WITH W/S KEYS",
+        "Yanlış kayaç! Tekrar deneyin...": "Wrong rock! Try again..."
     }
 };
 
