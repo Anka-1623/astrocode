@@ -794,8 +794,8 @@
 
         // Earth in sky
         var skyMoon = document.createElement('img');
-        skyMoon.src = 'photos/yarımay.jpeg';
-        skyMoon.className = 'sky-earth sky-moon-photo';
+        skyMoon.src = 'photos/yarımay.png';
+        skyMoon.className = 'sky-moon-photo';
         scene.appendChild(skyMoon);
 
         // Moon horizon mountains
