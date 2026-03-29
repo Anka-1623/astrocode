@@ -507,8 +507,9 @@
         behind.innerHTML = '<div class="door-space-bg"></div>';
         var astroD = document.createElement('div');
         astroD.className = 'astro-character';
-        astroD.style.cssText = 'position:relative;z-index:3;';
-        astroD.innerHTML = '<img src="photos/astro.jpeg" alt="Astro" style="width:80px;">';
+        astroD.id = 'door-astro';
+        astroD.style.cssText = 'position:relative;z-index:3;transform:scale(0.3);opacity:0.5;transition:transform 1.5s ease-out, opacity 1s ease;';
+        astroD.innerHTML = '<img src="photos/astro.jpeg" alt="Astro">';
         behind.appendChild(astroD);
         frame.appendChild(behind);
         // Door panels using kapısonhali.png split in half
@@ -549,12 +550,20 @@
                     if (doorPresses >= maxPresses) {
                         Engine.inputHandler = null;
                         Engine.hidePrompt();
+                        // Astro approaches the player
+                        var doorAstro = document.getElementById('door-astro');
+                        if (doorAstro) {
+                            doorAstro.style.transform = 'scale(1)';
+                            doorAstro.style.opacity = '1';
+                        }
                         Engine.showCongrats();
-                        Engine.showPrompt('SPACE TUŞUNA BASIN');
-                        Engine.waitKey('Space', function () {
-                            Engine.hideCongrats(); Engine.hidePrompt();
-                            Engine.fadeOut(3000).then(function () { Engine.setScene(G.step2Talk); });
-                        });
+                        setTimeout(function () {
+                            Engine.showPrompt('SPACE TUŞUNA BASIN');
+                            Engine.waitKey('Space', function () {
+                                Engine.hideCongrats(); Engine.hidePrompt();
+                                Engine.fadeOut(3000).then(function () { Engine.setScene(G.step2Talk); });
+                            });
+                        }, 1200);
                     }
                 }
             };
