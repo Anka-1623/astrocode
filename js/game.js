@@ -172,6 +172,7 @@
         btnTR.textContent = 'TÜRKÇE';
         btnTR.addEventListener('click', function () {
             gameData.lang = 'tr';
+            window.Lang.current = 'tr';
             Engine.fadeOut(800).then(function () { Engine.setScene(G.menuRole); Engine.fadeIn(800); });
         });
         var btnEN = document.createElement('button');
@@ -179,6 +180,7 @@
         btnEN.textContent = 'ENGLISH';
         btnEN.addEventListener('click', function () {
             gameData.lang = 'en';
+            window.Lang.current = 'en';
             Engine.fadeOut(800).then(function () { Engine.setScene(G.menuRole); Engine.fadeIn(800); });
         });
         btns.appendChild(btnTR);

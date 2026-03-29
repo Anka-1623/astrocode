@@ -163,6 +163,7 @@
         element.appendChild(cursor);
 
         if (E._twInterval) clearInterval(E._twInterval);
+        E._twCallback = callback;
         E._twInterval = setInterval(function () {
             if (i < text.length) {
                 element.insertBefore(document.createTextNode(text[i]), cursor);
@@ -171,7 +172,11 @@
                 clearInterval(E._twInterval);
                 E._twInterval = null;
                 cursor.remove();
-                if (callback) callback();
+                if (E._twCallback) {
+                    var cb = E._twCallback;
+                    E._twCallback = null;
+                    cb();
+                }
             }
         }, speed);
     };

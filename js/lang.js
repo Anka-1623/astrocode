@@ -12,10 +12,13 @@ window.Lang = {
         'TEKRAR DENE': 'TRY AGAIN',
         
         // Step 1 - Shuttle & Astro
+        'Yetkili: Günaydınlar efendim, Türkiye Uzay Ajansından arıyorum. AYAP-3 projesi için astronot olarak sizi seçtiğimizi mutlulukla bildiriyoruz.': 'Official: Good morning sir, I am calling from the Turkish Space Agency. We are happy to inform you that we have selected you as an astronaut for the AYAP-3 project.',
+        'Oyuncu: Çok teşekkür ederim, süreç için daha sonrasında iletişime geçeriz diye düşünüyorum.': 'Player: Thank you very much, I assume we will be in touch later for the process.',
         'Oyuncu: Hep bu anı merak etmiştim… düşündüğümden çok daha güzelmiş-': 'Player: I always wondered about this moment… it\'s much more beautiful than I thought-',
         '?: Lütfen beni içeri al! Ben seni bilgilendirmek için gönderildim.': '?: Please let me in! I was sent to brief you.',
         'Astro: Selam, ben Astro! Türk Uzay Ajansının sana rehberlik etmek için tasarladığı yapay zeka entegreli astronot yardımcısıyım.': 'Astro: Hi, I am Astro! The AI-integrated astronaut assistant designed by the Turkish Space Agency to guide you.',
         'Astro: Seni de unutmadık şampiyon, çok iyi iş çıkarıyorsun! Sıkı tutunun Türkiye\'nin umudu olan siz iki genç!!': 'Astro: We haven\'t forgotten you either champion, you are doing great! Hold on tight, you two young hopes of Turkey!!',
+
         
         // Step 2 - Door
         'Astro: Karşında Ay yüzeyine iniş yapacağımız Uzay Aracının kapısı var. Hadi kapıyı açıp devam edelim.': 'Astro: In front of you is the door of the Spacecraft for our lunar landing. Let\'s open the door and move on.',
@@ -140,8 +143,25 @@ window.Lang = {
         for (var i = 0; i < tagged.length; i++) {
             var el = tagged[i];
             var trText = el.getAttribute('data-tr-text');
-            el.textContent = window.T(trText);
+            var translatedText = window.T(trText);
+            
+            // If this is a typing dialogue, handle cursor safely
+            var cursor = el.querySelector('.typewriter-cursor');
+            if (cursor && window.Engine && window.Engine._twInterval) {
+                // Instantly finish typing in the new language
+                clearInterval(window.Engine._twInterval);
+                window.Engine._twInterval = null;
+                el.textContent = translatedText;
+                if (window.Engine._twCallback) {
+                    var cb = window.Engine._twCallback;
+                    window.Engine._twCallback = null;
+                    cb();
+                }
+            } else {
+                el.textContent = translatedText;
+            }
         }
+
         
         // Strategy 2: Walk the DOM and replace raw texts (for innerHTML injects)
         function walkAndTranslate(node) {
